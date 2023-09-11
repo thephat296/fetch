@@ -26,7 +26,7 @@ Key technologies and libraries:
 2. Navigate to File > New > Project From Version Control > Git.
 3. In the URL field, input `git@github.com:thephat296/fetch.git`.
 
-##License
+## License
 ```
 MIT License
 
