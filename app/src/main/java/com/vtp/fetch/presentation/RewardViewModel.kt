@@ -2,7 +2,7 @@ package com.vtp.fetch.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vtp.fetch.domain.usecase.GetRewardGroupsUseCase
+import com.vtp.fetch.domain.usecase.GetRewardsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RewardViewModel @Inject constructor(
-    getRewardsUseCase: GetRewardGroupsUseCase
+    getRewardsUseCase: GetRewardsUseCase
 ) : ViewModel() {
 
     val rewardUiState: StateFlow<RewardUiState> =

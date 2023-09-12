@@ -21,6 +21,7 @@ class RewardAdapter @Inject constructor() :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val reward = getItem(position)
         with(holder.binding) {
+            tvListId.text = root.context.getString(R.string.reward_list_id, reward.listId)
             tvId.text = root.context.getString(R.string.reward_id, reward.id)
             tvName.text = root.context.getString(R.string.reward_name, reward.name)
         }

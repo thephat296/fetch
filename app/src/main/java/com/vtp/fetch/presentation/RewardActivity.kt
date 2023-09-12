@@ -21,21 +21,20 @@ class RewardActivity : AppCompatActivity() {
     private val viewModel: RewardViewModel by viewModels()
 
     @Inject
-    internal lateinit var rewardGroupAdapter: RewardGroupAdapter
+    internal lateinit var rewardAdapter: RewardAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRewardsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         with(binding.rvRewardGroup) {
-            adapter = rewardGroupAdapter
+            adapter = rewardAdapter
             layoutManager = LinearLayoutManager(this@RewardActivity)
-            setHasFixedSize(true)
         }
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.rewardUiState.collect {
-                    rewardGroupAdapter.submitList(it.rewardGroups)
+                    rewardAdapter.submitList(it.rewardGroups)
                     binding.progressCircular.isVisible = it.isLoading
                     it.error?.let { throwable ->
                         toast(throwable.message.orEmpty())
