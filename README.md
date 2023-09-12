@@ -5,9 +5,8 @@ This app retrieves a list of rewards from https://fetch-hiring.s3.amazonaws.com/
 * Any items without a name are left out.
 
 ## Screenshots
-![rewards_1](https://github.com/thephat296/fetch/assets/30050797/df5bff35-3c49-4736-8ece-f9fd1cb4070b)
-![rewards_2](https://github.com/thephat296/fetch/assets/30050797/8eb63ae7-28d9-4908-b40a-0fc0acc9fde8)
-
+![image](https://github.com/thephat296/fetch/assets/30050797/42f4a911-94f2-4725-a549-5fb28d07a872)
+![image](https://github.com/thephat296/fetch/assets/30050797/9a9364dc-7db8-4ef4-9363-307a3252e5a6)
 
 ## Architecture
 The **Fetch Rewards** app follows the [official architecture guidance](https://developer.android.com/topic/architecture).
