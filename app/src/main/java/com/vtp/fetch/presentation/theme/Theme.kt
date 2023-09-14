@@ -1,4 +1,4 @@
-package com.miu.jetpackcomposepractice2.ui.theme
+package com.vtp.fetch.presentation.theme
 
 import android.app.Activity
 import android.os.Build
@@ -14,12 +14,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.vtp.fetch.presentation.theme.Pink40
-import com.vtp.fetch.presentation.theme.Pink80
-import com.vtp.fetch.presentation.theme.Purple40
-import com.vtp.fetch.presentation.theme.Purple80
-import com.vtp.fetch.presentation.theme.PurpleGrey40
-import com.vtp.fetch.presentation.theme.PurpleGrey80
+import com.miu.jetpackcomposepractice2.ui.theme.Typography
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
