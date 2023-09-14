@@ -1,4 +1,4 @@
-package com.vtp.fetch.presentation
+package com.vtp.fetch.presentation.deprecated
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

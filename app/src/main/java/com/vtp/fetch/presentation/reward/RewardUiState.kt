@@ -1,9 +1,9 @@
-package com.vtp.fetch.presentation
+package com.vtp.fetch.presentation.reward
 
 import com.vtp.fetch.domain.model.Reward
 
 data class RewardUiState(
     val isLoading: Boolean = false,
-    val rewardGroups: List<Reward> = emptyList(),
+    val rewards: List<Reward> = emptyList(),
     val error: Throwable? = null
 )

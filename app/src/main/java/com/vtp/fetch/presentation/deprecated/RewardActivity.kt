@@ -1,4 +1,4 @@
-package com.vtp.fetch.presentation
+package com.vtp.fetch.presentation.deprecated
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -9,7 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vtp.fetch.databinding.ActivityRewardsBinding
-import com.vtp.fetch.presentation.utils.toast
+import com.vtp.fetch.presentation.reward.RewardViewModel
+import com.vtp.fetch.presentation.deprecated.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -34,7 +35,7 @@ class RewardActivity : AppCompatActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.rewardUiState.collect {
-                    rewardAdapter.submitList(it.rewardGroups)
+                    rewardAdapter.submitList(it.rewards)
                     binding.progressCircular.isVisible = it.isLoading
                     it.error?.let { throwable ->
                         toast(throwable.message.orEmpty())

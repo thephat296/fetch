@@ -1,4 +1,4 @@
-package com.vtp.fetch.presentation.utils
+package com.vtp.fetch.presentation.deprecated.utils
 
 import android.app.Activity
 import android.widget.Toast
