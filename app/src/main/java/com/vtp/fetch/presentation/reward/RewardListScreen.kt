@@ -7,26 +7,23 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.hilt.navigation.compose.hiltViewModel
+import com.vtp.fetch.domain.model.Reward
 
 @Composable
 fun RewardListScreen(
-    rewardViewModel: RewardViewModel = hiltViewModel()
+    state: RewardUiState,
+    onRewardClicked: (Reward) -> Unit
 ) {
-    val state = rewardViewModel.rewardUiState.collectAsState().value
     val context = LocalContext.current
     Box(modifier = Modifier.fillMaxSize()) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.rewards) { reward ->
                 RewardItem(
                     reward = reward,
-                    onItemClicked = {
-                        Toast.makeText(context, reward.toString(), Toast.LENGTH_SHORT).show()
-                    }
+                    onItemClicked = onRewardClicked
                 )
             }
         }
