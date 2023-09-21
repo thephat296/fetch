@@ -20,7 +20,7 @@ fun RewardListScreen(
     val context = LocalContext.current
     Box(modifier = Modifier.fillMaxSize()) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(state.rewards) { reward ->
+            items(state.rewards, key = Reward::id) { reward ->
                 RewardItem(
                     reward = reward,
                     onItemClicked = onRewardClicked
