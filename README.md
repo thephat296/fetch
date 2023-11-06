@@ -13,6 +13,7 @@ The **Fetch Rewards** app follows the [official architecture guidance](https://d
 
 Key technologies and libraries:
 * **Kotlin Coroutines and Flow**: manage asynchronous operations efficiently, ensure smooth user experiences.
+* **Jetpack Compose**: a modern Android UI toolkit that simplifies the process of building beautiful and dynamic user interfaces through a declarative and composable approach.
 * **Hilt**: dependency injection
 * **ViewModel**: stores and manage UI-related data
 * **StateFlow**: helps in propagating changes in a reactive and efficient manner
