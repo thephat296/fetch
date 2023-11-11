@@ -3,7 +3,6 @@ package com.vtp.fetch.presentation.reward
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vtp.fetch.domain.usecase.GetRewardsUseCase
-import com.vtp.fetch.presentation.reward.RewardUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
