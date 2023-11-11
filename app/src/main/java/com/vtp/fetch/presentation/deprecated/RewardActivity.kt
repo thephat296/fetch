@@ -5,12 +5,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vtp.fetch.databinding.ActivityRewardsBinding
-import com.vtp.fetch.presentation.reward.RewardViewModel
 import com.vtp.fetch.presentation.deprecated.utils.toast
+import com.vtp.fetch.presentation.reward.RewardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -33,15 +33,15 @@ class RewardActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@RewardActivity)
         }
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.rewardUiState.collect {
+            viewModel.rewardUiState
+                .flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
+                .collect {
                     rewardAdapter.submitList(it.rewards)
                     binding.progressCircular.isVisible = it.isLoading
                     it.error?.let { throwable ->
                         toast(throwable.message.orEmpty())
                     }
                 }
-            }
         }
     }
 }
