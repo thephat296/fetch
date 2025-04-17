@@ -8,6 +8,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -32,4 +35,24 @@ object AppModule {
     @Provides
     @DefaultDispatcher
     fun provideDefaultDispatcher(): CoroutineDispatcher = Dispatchers.Default
+}
+
+fun main() = runBlocking {
+    val result1 = async {
+        performTask1()
+    }
+    val result2 = async {
+        performTask2()
+    }
+    // Use await() to wait for both results
+    println("Result 1: ${result1.await()}")
+    println("Result 2: ${result2.await()}")
+}
+suspend fun performTask1(): Int {
+    delay(1000L)  // Simulating a long-running task
+    return 10
+}
+suspend fun performTask2(): Int {
+    delay(2000L)  // Simulating another long-running task
+    return 20
 }
